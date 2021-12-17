@@ -1,16 +1,16 @@
 var search=JSON.parse(localStorage.getItem("coursera_search"));
 
 
-async function showlist(search){
+async function showlist(){
     // localStorage.removeItem("coursera_search")
-    // let res = await fetch(`https://api.coursera.org/api/courses.v1?q=search&query=${search}&includes=instructorIds,photoUrl,description,largeIcon&fields=instructorIds,photoUrl,description,partnerLogo,certificates,startDate,workload,specializations,domainTypes`)
-    let res=await fetch(`http://localhost:3000/courses/`)
+    let res = await fetch(`https://api.coursera.org/api/courses.v1?q=search&query=${search}&includes=instructorIds,photoUrl,description,largeIcon&fields=instructorIds,photoUrl,description,partnerLogo,certificates,startDate,workload,specializations,domainTypes`)
+    // let res=await fetch(`http://localhost:3000/courses/`)
     console.log(res)
     let data =await res.json();
     console.log("dharmesh",data);
     // displaydata(data)
 }
-
+showlist()
 showlist(search)
 let parent=document.getElementById("displaydiv")
 

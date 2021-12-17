@@ -3,15 +3,15 @@ var search=JSON.parse(localStorage.getItem("coursera_search"));
 
 async function showlist(){
     // localStorage.removeItem("coursera_search")
-    let res = await fetch(`https://api.coursera.org/api/courses.v1?q=search&query=${search}&includes=instructorIds,photoUrl,description,largeIcon&fields=instructorIds,photoUrl,description,partnerLogo,certificates,startDate,workload,specializations,domainTypes`)
-    // let res=await fetch(`http://localhost:3000/courses/`)
+    // let res = await fetch(`https://api.coursera.org/api/courses.v1?q=search&query=${search}&includes=instructorIds,photoUrl,description,largeIcon&fields=instructorIds,photoUrl,description,partnerLogo,certificates,startDate,workload,specializations,domainTypes`)
+    let res=await fetch(`https://course-era-web11.herokuapp.com/courses/`)
     console.log(res)
     let data =await res.json();
     console.log("dharmesh",data);
     // displaydata(data)
 }
 showlist()
-showlist(search)
+// showlist(search)
 let parent=document.getElementById("displaydiv")
 
 function displaydata(data){
@@ -78,7 +78,7 @@ async function lang_select(){
     empty()
     let lang_form=document.getElementById("formid1")
     let  lang_name=lang_form.languages[lang_form.languages.selectedIndex].text
-    let res = await fetch(`http://localhost:3000/courses/`)
+    let res = await fetch(`https://course-era-web11.herokuapp.com/courses/`)
     let data =await res.json();
     show_server_data(data,lang_name)
    
@@ -135,7 +135,7 @@ async function level_select(){
     empty()
     let lang_form=document.getElementById("formid2")
     let  level_name=lang_form.level[lang_form.level.selectedIndex].text
-    let res = await fetch(`http://localhost:3000/courses/`)
+    let res = await fetch(`https://course-era-web11.herokuapp.com/courses/`)
     let data =await res.json();
     
     show_server_data_level(data,level_name)
@@ -182,7 +182,7 @@ async function duration_select(){
     empty()
     let lang_form=document.getElementById("formid3")
     let  duration_name=lang_form.duration[lang_form.duration.selectedIndex].value
-    let res = await fetch(`http://localhost:3000/api/data`)
+    let res = await fetch(`https://course-era-web11.herokuapp.com/courses/`)
     let data =await res.json();
     
     show_server_data_duration(data,duration_name)
@@ -218,7 +218,7 @@ function show_server_data_duration(data,duration_name){
         descdiv.append(title,institute,type,studenttotal,studenttype)
         maindiv.append(imgdiv,descdiv)
         maindiv.onclick=function(){
-            document.location.href="course_ldesc_page.html";
+            document.location.href="course_desc_page.html";
         }
         parent.append(maindiv,hr)
         }
@@ -231,7 +231,7 @@ async function subject_select(){
     empty()
     let lang_form=document.getElementById("formid4")
     let subject_name=lang_form.subject[lang_form.subject.selectedIndex].value
-    let res = await fetch(`http://localhost:3000/api/data`)
+    let res = await fetch(`https://course-era-web11.herokuapp.com/courses/`)
     let data =await res.json();
     show_server_data_subject(data,subject_name)
 }
@@ -265,7 +265,7 @@ function show_server_data_subject(data,subject_name){
     descdiv.append(title,institute,type,studenttotal,studenttype)
     maindiv.append(imgdiv,descdiv)
     maindiv.onclick=function(){
-        document.location.href="course_ldesc_page.html";
+        document.location.href="course_desc_page.html";
     }
     parent.append(maindiv,hr)
     }
@@ -278,7 +278,7 @@ async function skill_select(){
     empty()
     let lang_form=document.getElementById("formid5")
     let subject_name=lang_form.skill[lang_form.skill.selectedIndex].value
-    let res = await fetch(`http://localhost:3000/api/data`)
+    let res = await fetch(`https://course-era-web11.herokuapp.com/courses/`)
     let data =await res.json();
     show_server_data_skill(data,subject_name)
 }
@@ -312,7 +312,7 @@ function show_server_data_skill(data,subject_name){
     descdiv.append(title,institute,type,studenttotal,studenttype)
     maindiv.append(imgdiv,descdiv)
     maindiv.onclick=function(){
-        document.location.href="course_ldesc_page.html";
+        document.location.href="course_desc_page.html";
     }
     parent.append(maindiv,hr)
     }
@@ -324,7 +324,7 @@ async function learning_select(){
     empty()
     let lang_form=document.getElementById("formid7")
     let learning_name=lang_form.learning[lang_form.learning.selectedIndex].value
-    let res = await fetch(`http://localhost:3000/api/data`)
+    let res = await fetch(`https://course-era-web11.herokuapp.com/courses/`)
     let data =await res.json();
     show_server_data_learning(data,learning_name)
 }
@@ -359,7 +359,7 @@ function show_server_data_learning(data,learning_name){
     descdiv.append(title,institute,type,studenttotal,studenttype)
     maindiv.append(imgdiv,descdiv)
     maindiv.onclick=function(){
-        document.location.href="course_ldesc_page.html";
+        document.location.href="course_desc_page.html";
     }
     parent.append(maindiv,hr)
     }

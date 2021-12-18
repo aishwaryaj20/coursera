@@ -61,8 +61,8 @@ function displaydata(data){
         maindiv.append(imgdiv,descdiv)
         maindiv.onclick=function(){
             alert("go to desc page")
-            document.location.href=`/products/desc?coursename=${data[d].title}&institute=${data[d].institute}&type=${data[d].type}&img=${data[d].img}&category=${data[d].category}&duration=${data[d].duration}&duration1=${data[d].duration1}`;
-            // document.location.href=`/courses/desc`
+            // document.location.href=`/products/desc?coursename=${data[d].title}&institute=${data[d].institute}&type=${data[d].type}&img=${data[d].img}&category=${data[d].category}&duration=${data[d].duration}&duration1=${data[d].duration1}`;
+            document.location.href=`/courses/desc`
         }
         parent.append(maindiv,hr)
     }

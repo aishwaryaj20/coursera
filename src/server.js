@@ -18,7 +18,9 @@ app.set("views", path.join(__dirname, "views/"));
 app.set("view engine", "ejs");
 
 app.use("/courses/",allcourseController)
-
+app.get("/", function (req, res) {
+    return res.render("products/index");
+  });
 const start=async()=>{
     const con=await connect();
     console.log("connection Established")

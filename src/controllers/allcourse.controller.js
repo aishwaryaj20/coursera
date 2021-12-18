@@ -65,6 +65,9 @@ router.get("/search",async function (req, res) {
  router.get("/enterprises",function (req, res) {
     return res.render("products/Enterprises");
 })
+router.get("/students",function (req, res) {
+    return res.render("products/students");
+})
 
 router.get("/teams",function (req, res) {
     return res.render("products/teams");

@@ -124,3 +124,10 @@ var searchbutton=document.getElementById("searchicon")
 searchbutton.onclick=()=>{
     window.location.href="../courses/search"
 }
+
+var student=document.getElementById("forStu")
+student.style.color="blue"
+
+student.onclick=()=>{
+    window.location.href="../courses/students"
+}

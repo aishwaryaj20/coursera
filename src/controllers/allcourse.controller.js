@@ -44,4 +44,22 @@ router.get("/search",async function (req, res) {
           
  });
 
+ router.get("/desc",async function (req, res) {
+    const data = await allcourseModel.find().lean().exec(); 
+    console.log(data) 
+    res.render("products/courseDescription",{
+    
+        coursename: req.query.coursename,
+        institute: req.query.institute,
+        type: req.query.type,
+        img: req.query.img,
+        category: req.query.category,
+        duration: req.query.duration,
+        duration1:req.query.duration1,
+        
+        
+      });
+          
+ });
+
 module.exports=router;

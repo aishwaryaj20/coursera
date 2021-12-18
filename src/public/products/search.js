@@ -17,7 +17,7 @@ if(localStorage.getItem("coursera_search")===null){
         let se=JSON.parse(localStorage.getItem("coursera_search"));
         se.push(search);
         localStorage.setItem("coursera_search",JSON.stringify(se));
-        document.location.href="../../views/products/course_list_page.ejs";
+        document.location.href="../courses/search";
     }
     
     // alert("Item Added Into Cart");

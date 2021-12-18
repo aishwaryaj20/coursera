@@ -62,4 +62,12 @@ router.get("/search",async function (req, res) {
           
  });
 
+ router.get("/enterprises",function (req, res) {
+    return res.render("products/Enterprises");
+})
+
+router.get("/teams",function (req, res) {
+    return res.render("products/teams");
+})
+
 module.exports=router;

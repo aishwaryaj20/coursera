@@ -131,3 +131,10 @@ student.style.color="blue"
 student.onclick=()=>{
     window.location.href="../courses/students"
 }
+
+var google=document.getElementById("go")
+google.style.color="blue"
+
+google.onclick=()=>{
+    window.location.href="../courses/google"
+}

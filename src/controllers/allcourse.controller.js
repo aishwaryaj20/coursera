@@ -69,6 +69,10 @@ router.get("/students",function (req, res) {
     return res.render("products/students");
 })
 
+router.get("/google",function (req, res) {
+    return res.render("products/google");
+})
+
 router.get("/teams",function (req, res) {
     return res.render("products/teams");
 })
